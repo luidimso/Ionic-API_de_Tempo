@@ -25673,3 +25673,11 @@ ion-navbar.toolbar {
   min-height: calc(46px + constant(safe-area-inset-bottom));
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
+
+page-home .header {
+  color: white;
+  height: 175px;
+  background: #0A651A;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0A651A), to(#19872C));
+  background: linear-gradient(to bottom, #0A651A 0%, #19872C 100%);
+}

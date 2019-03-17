@@ -1,3 +1,10 @@
 page-home {
-
+  .header{
+    color: white;
+    height: 175px;
+    background: #0A651A;
+    background: -moz-linear-gradient(top, #0A651A 0%, #19872C 100%);
+    background: -webkit-linear-gradient(top, #0A651A 0%,#19872C 100%);
+    background: linear-gradient(to bottom, #0A651A 0%,#19872C 100%);
+  }
 }

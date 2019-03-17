@@ -1,12 +1,12 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Previsão do tempo
-    </ion-title>
-  </ion-navbar>
+<ion-header padding *ngIf="temp.length > 0 && temp_agora != null">
+  <div>
+    <h2>{{temp_agora.name}}</h2>
+    <h1 style="float: left">{{temp_agora.main.temp}}°C</h1> <img src="{{'http://openweathermap.org/img/w/'+temp_agora.weather[0].icon+'.png'}}" style="height: auto; width: 75px;">
+    <h3>{{temp_agora.weather[0].description}}</h3>
+  </div>
 </ion-header>
 
-<ion-content padding *ngIf="temp.length > 0" style="margin-top:50px;">
+<ion-content *ngIf="temp.length > 0 && temp_agora != null" style="margin-top: 175px">
   <ion-card>
     <ion-card-header>
       <h1>Amanhã</h1>
