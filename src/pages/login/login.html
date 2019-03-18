@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Nome</ion-label>
+    <ion-input type="text" #nome></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Cidade</ion-label>
+    <ion-input type="text" #cidade></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Senha</ion-label>
+    <ion-input type="password" #senha></ion-input>
+  </ion-item>
+
+  <ion-button (click)="cadastrar(nome.value, cidade.value, senha.value)">Cadastrar</ion-button>
+</ion-content>
