@@ -1,22 +1,27 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>login</ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
-  <ion-item>
-    <ion-label>Login</ion-label>
-    <ion-input type="text" #login></ion-input>
-  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        <ion-item>
+          <ion-label floating>Login</ion-label>
+          <ion-input type="text" #login></ion-input>
+        </ion-item>
+      </ion-col>
 
-  <ion-item>
-    <ion-label>Senha</ion-label>
-    <ion-input type="password" #senha_login></ion-input>
-  </ion-item>
+      <ion-col col-4>
+        <ion-item>
+          <ion-label floating>Senha</ion-label>
+          <ion-input type="password" #senha_login></ion-input>
+        </ion-item>
+      </ion-col>
 
-  <button ion-button (click)="entrar(login.value, senha_login.value)">Entrar</button>
+      <ion-col col-4>
+        <br><br> <button ion-button (click)="entrar(login.value, senha_login.value)">Entrar</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
+  <h1 text-center>Cadastro</h1>
 
   <ion-item>
     <ion-label>Nome de usuário</ion-label>
@@ -31,7 +36,7 @@
   <ion-item>
     <ion-label>Senha</ion-label>
     <ion-input type="password" #senha></ion-input>
-  </ion-item>
+  </ion-item><br><br>
 
-  <button ion-button (click)="cadastrar(username.value, cidade.value, senha.value)">Cadastrar</button>
+  <button ion-button block (click)="cadastrar(username.value, cidade.value, senha.value)">Cadastrar</button>
 </ion-content>

@@ -41,6 +41,7 @@ export class HomePage {
 
   carregarAgora(data){
     this.temp_agora = data;
+    this.temp_agora.main.temp = parseInt(this.temp_agora.main.temp);
 
     console.log(this.temp_agora);
   }

@@ -30,9 +30,9 @@
     <feature name="IonicWebView">
         <param name="android-package" value="com.ionicframework.cordova.webview.IonicWebView" />
     </feature>
-    <name>MyApp</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <name>P2 Ionic</name>
+    <description>P2 do 5º período de Ionic</description>
+    <author email="luidi_mso@outlook.com" href="http://ionicframework.com/">Luídi Matheus Silva de Oliveira</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
