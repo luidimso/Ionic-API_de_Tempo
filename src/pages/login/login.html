@@ -6,8 +6,21 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-label>Nome</ion-label>
-    <ion-input type="text" #nome></ion-input>
+    <ion-label>Login</ion-label>
+    <ion-input type="text" #login></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Senha</ion-label>
+    <ion-input type="password" #senha_login></ion-input>
+  </ion-item>
+
+  <button ion-button (click)="entrar(login.value, senha_login.value)">Entrar</button>
+
+
+  <ion-item>
+    <ion-label>Nome de usuário</ion-label>
+    <ion-input type="text" #username></ion-input>
   </ion-item>
 
   <ion-item>
@@ -20,5 +33,5 @@
     <ion-input type="password" #senha></ion-input>
   </ion-item>
 
-  <button ion-button (click)="cadastrar(nome.value, cidade.value, senha.value)">Cadastrar</button>
+  <button ion-button (click)="cadastrar(username.value, cidade.value, senha.value)">Cadastrar</button>
 </ion-content>

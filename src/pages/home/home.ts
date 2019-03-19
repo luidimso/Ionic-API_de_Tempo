@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map'
 
@@ -9,18 +9,20 @@ import 'rxjs/add/operator/map'
   templateUrl: 'home.html'
 })
 export class HomePage {
-  url = "http://api.openweathermap.org/data/2.5/forecast?q=Campos%20dos%20Goytacazes&units=metric&lang=pt&appid=33c7aa3f2aef038c05d28c3fb0668a73";
+  url = "http://api.openweathermap.org/data/2.5/forecast?units=metric&lang=pt&appid=33c7aa3f2aef038c05d28c3fb0668a73&q=";
   temp:any = [];
   temp_agora:any = null;
-  url_agora = "https://api.openweathermap.org/data/2.5/weather?q=Campos%20dos%20Goytacazes&units=metric&lang=pt&appid=33c7aa3f2aef038c05d28c3fb0668a73";
+  url_agora = "https://api.openweathermap.org/data/2.5/weather?units=metric&lang=pt&appid=33c7aa3f2aef038c05d28c3fb0668a73&q=";
 
-  constructor(public navCtrl: NavController, public http: Http) {
-    this.http.get(this.url).map(res => res.json()).subscribe(data => {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
+    let cidade = this.navParams.get('cidade');
+
+    this.http.get(this.url+encodeURI(cidade)).map(res => res.json()).subscribe(data => {
         this.carregar(data);
     }, err => {
     });
 
-    this.http.get(this.url_agora).map(res => res.json()).subscribe(data => {
+    this.http.get(this.url_agora+encodeURI(cidade)).map(res => res.json()).subscribe(data => {
         this.carregarAgora(data);
     }, err => {
     });
