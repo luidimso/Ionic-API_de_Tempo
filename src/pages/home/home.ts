@@ -9,20 +9,21 @@ import 'rxjs/add/operator/map'
   templateUrl: 'home.html'
 })
 export class HomePage {
+  cidade:string;
   url = "http://api.openweathermap.org/data/2.5/forecast?units=metric&lang=pt&appid=33c7aa3f2aef038c05d28c3fb0668a73&q=";
   temp:any = [];
   temp_agora:any = null;
   url_agora = "https://api.openweathermap.org/data/2.5/weather?units=metric&lang=pt&appid=33c7aa3f2aef038c05d28c3fb0668a73&q=";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
-    let cidade = this.navParams.get('cidade');
+    this.cidade = this.navParams.get('cidade');
 
-    this.http.get(this.url+encodeURI(cidade)).map(res => res.json()).subscribe(data => {
+    this.http.get(this.url+encodeURI(this.cidade)).map(res => res.json()).subscribe(data => {
         this.carregar(data);
     }, err => {
     });
 
-    this.http.get(this.url_agora+encodeURI(cidade)).map(res => res.json()).subscribe(data => {
+    this.http.get(this.url_agora+encodeURI(this.cidade)).map(res => res.json()).subscribe(data => {
         this.carregarAgora(data);
     }, err => {
     });

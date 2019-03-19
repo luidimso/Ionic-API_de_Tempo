@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Mar 19 03:06:50 BRT 2019
+#Tue Mar 19 09:19:57 BRT 2019
 56.path=www/build/vendor.js
 5.base=/home/luidi/Desktop/Ionic-API_de_Tempo/platforms/android/app/build/intermediates/assets/release
 42.base=/home/luidi/Desktop/Ionic-API_de_Tempo/platforms/android/app/build/intermediates/assets/release

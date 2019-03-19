@@ -250,12 +250,12 @@ var HomePage = /** @class */ (function () {
         this.temp = [];
         this.temp_agora = null;
         this.url_agora = "https://api.openweathermap.org/data/2.5/weather?units=metric&lang=pt&appid=33c7aa3f2aef038c05d28c3fb0668a73&q=";
-        var cidade = this.navParams.get('cidade');
-        this.http.get(this.url + encodeURI(cidade)).map(function (res) { return res.json(); }).subscribe(function (data) {
+        this.cidade = this.navParams.get('cidade');
+        this.http.get(this.url + encodeURI(this.cidade)).map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.carregar(data);
         }, function (err) {
         });
-        this.http.get(this.url_agora + encodeURI(cidade)).map(function (res) { return res.json(); }).subscribe(function (data) {
+        this.http.get(this.url_agora + encodeURI(this.cidade)).map(function (res) { return res.json(); }).subscribe(function (data) {
             _this.carregarAgora(data);
         }, function (err) {
         });
@@ -275,7 +275,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/luidi/Desktop/Ionic-API_de_Tempo/src/pages/home/home.html"*/'<ion-header padding *ngIf="temp.length > 0 && temp_agora != null">\n  <div>\n    <h2>{{temp_agora.name}}</h2>\n    <h1 style="float: left">{{temp_agora.main.temp}}°C</h1> <img src="{{\'http://openweathermap.org/img/w/\'+temp_agora.weather[0].icon+\'.png\'}}" style="height: auto; width: 75px;">\n    <h3>{{temp_agora.weather[0].description}}</h3>\n  </div>\n</ion-header>\n\n<ion-content *ngIf="temp.length > 0 && temp_agora != null" style="margin-top: 175px">\n  <ion-card>\n    <ion-card-header>\n      <h1>Amanhã</h1>\n      <h2>Campos dos Goytacazes</h2>\n      <h3>{{temp[0].weather[0].description}}</h3>\n    </ion-card-header>\n\n    <ion-card-content>\n      <img src="{{\'http://openweathermap.org/img/w/\'+temp[0].weather[0].icon+\'.png\'}}" style="height: 25%; width: 25%;float: left;">\n      <h1 style="float: right; margin-top: 20px">{{temp[0].main.temp}}°C</h1>\n    </ion-card-content>\n  </ion-card>\n\n\n  <ion-card>\n    <ion-card-header>\n      <h1>Depois de amanhã</h1>\n      <h2>Campos dos Goytacazes</h2>\n      <h3>{{temp[1].weather[0].description}}</h3>\n    </ion-card-header>\n\n    <ion-card-content>\n      <img src="{{\'http://openweathermap.org/img/w/\'+temp[1].weather[0].icon+\'.png\'}}" style="height: 25%; width: 25%;float: left;">\n      <h1 style="float: right; margin-top: 20px">{{temp[1].main.temp}}°C</h1>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/home/luidi/Desktop/Ionic-API_de_Tempo/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/luidi/Desktop/Ionic-API_de_Tempo/src/pages/home/home.html"*/'<ion-header padding *ngIf="temp.length > 0 && temp_agora != null">\n  <div>\n    <h2>{{temp_agora.name}}</h2>\n    <h1 style="float: left">{{temp_agora.main.temp}}°C</h1> <img src="{{\'http://openweathermap.org/img/w/\'+temp_agora.weather[0].icon+\'.png\'}}" style="height: auto; width: 75px;">\n    <h3>{{temp_agora.weather[0].description}}</h3>\n  </div>\n</ion-header>\n\n<ion-content *ngIf="temp.length > 0 && temp_agora != null" style="margin-top: 175px">\n  <ion-card>\n    <ion-card-header>\n      <h1>Amanhã</h1>\n      <h2>{{cidade}}</h2>\n      <h3>{{temp[0].weather[0].description}}</h3>\n    </ion-card-header>\n\n    <ion-card-content>\n      <img src="{{\'http://openweathermap.org/img/w/\'+temp[0].weather[0].icon+\'.png\'}}" style="height: 25%; width: 25%;float: left;">\n      <h1 style="float: right; margin-top: 20px">{{temp[0].main.temp}}°C</h1>\n    </ion-card-content>\n  </ion-card>\n\n\n  <ion-card>\n    <ion-card-header>\n      <h1>Depois de amanhã</h1>\n      <h2>{{cidade}}</h2>\n      <h3>{{temp[1].weather[0].description}}</h3>\n    </ion-card-header>\n\n    <ion-card-content>\n      <img src="{{\'http://openweathermap.org/img/w/\'+temp[1].weather[0].icon+\'.png\'}}" style="height: 25%; width: 25%;float: left;">\n      <h1 style="float: right; margin-top: 20px">{{temp[1].main.temp}}°C</h1>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/home/luidi/Desktop/Ionic-API_de_Tempo/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]])
     ], HomePage);
